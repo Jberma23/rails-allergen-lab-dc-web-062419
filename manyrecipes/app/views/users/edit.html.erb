@@ -1,0 +1,19 @@
+<h1>Edit User </h1>
+
+<h3>
+ <ul>
+<%if @user.errors.any?%>
+Could not create user because:
+<% @user.errors.full_messages.each do |msg|%>
+<li><%=msg%></li>
+</ul>
+<%end%>
+<%end%>
+
+</h3>
+
+<%=form_for @user do |f|%>
+<%=f.label :name%>
+<%=f.text_field :name%>
+<%=f.submit%>
+<%end%>
